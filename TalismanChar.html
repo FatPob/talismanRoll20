@@ -37,8 +37,7 @@
 
 <hr/>
 <h2>Skills</h2>
-<h5>Check boxes for trained skills. *Skills cannot be used untrained.</h5>
-
+<h5>Check boxes for trained skills</h5>
 <div class="2colrow">
   <div class="col">
     <label>Animal Handling</label>    <input type="text" name='attr_focusanimal' >    <select name="attr_animal_handling" class="dtype">
@@ -117,7 +116,14 @@
       <option value="@{insight}">Insight</option>      <option value="@{wits}">Wits</option>    </select>
     <input style="width:40px;" type='checkbox' name='attr_investigationTrained' value='@{investigation}' class='sheet-trainedchk'>
     <button type='roll' name='roll_investigation' value=' /r 3d6m + [[{@{investigationTrained}}+?{Focus/Other: -2 or 2|0}[Modifier] + @{Wound1} + @{Wound2} + @{Wound3} + @{Wound4} + @{Wound5} [Wounds]]] @{character_name} rolls an Investigation test'></button>
+    <br/>
+
+    <label>*Lore</label>    <input type="text" name='attr_focuslore' >    <select name="attr_lore" class="dtype">      <option value="0"> ~ </option>
+        <option value="@{wits}">Wits</option>    </select>
+    <input style="width:40px;" type='checkbox' name='attr_loreTrained' value='@{investigation}' class='sheet-trainedchk'>
+    <button type='roll' name='roll_lore' value=' /r 3d6m + [[{@{loreTrained}}+?{Focus/Other: -2 or 2|0}[Modifier] + @{Wound1} + @{Wound2} + @{Wound3} + @{Wound4} + @{Wound5} [Wounds]]] @{character_name} rolls a Lore test'></button>
   </div>
+
   <div class="col">
     <label>Melee </label>    <input type="text" name='attr_focusmelee' >    <select name="attr_melee" class="dtype">      <option value="0"> ~ </option>
       <option value="@{brawn}">Brawn</option>      <option value="@{agility}">Agility</option>    </select>
@@ -194,7 +200,13 @@
     <input style="width:140px;" type="text" name='attr_customskill' >    <input type="text" name='attr_focuscustomskill' >    <select name="attr_custom" class="dtype">      <option value="0"> ~ </option>
       <option value="@{brawn}">Brawn</option>      <option value="@{agility}">Agility</option>      <option value="@{mettle}">Mettle</option>      <option value="@{insight}">Insight</option>      <option value="@{wits}">Wits</option>      <option value="@{resolve}">Resolve</option>    </select>
     <input style="width:40px;" type='checkbox' name='attr_customTrained' value='@{custom}' class='sheet-trainedchk'>
-    <button type='roll' name='roll_custom' value=' /r 3d6m + [[{@{custonTrained}}+?{Focus/Other: -2 or 2|0}[Modifier] + @{Wound1} + @{Wound2} + @{Wound3} + @{Wound4} + @{Wound5} [Wounds]]] @{character_name} rolls a @{customskill} test '></button>
+    <button type='roll' name='roll_custom' value=' /r 3d6m + [[{@{customTrained}}+?{Focus/Other: -2 or 2|0}[Modifier] + @{Wound1} + @{Wound2} + @{Wound3} + @{Wound4} + @{Wound5} [Wounds]]] @{character_name} rolls a @{customskill} test '></button>
+    <br/>
+    
+    <input style="width:140px;" type="text" name='attr_customskill1' >    <input type="text" name='attr_focuscustomskill1' >    <select name="attr_custom1" class="dtype">      <option value="0"> ~ </option>
+      <option value="@{brawn}">Brawn</option>      <option value="@{agility}">Agility</option>      <option value="@{mettle}">Mettle</option>      <option value="@{insight}">Insight</option>      <option value="@{wits}">Wits</option>      <option value="@{resolve}">Resolve</option>    </select>
+    <input style="width:40px;" type='checkbox' name='attr_custom1Trained' value='@{custom}' class='sheet-trainedchk'>
+    <button type='roll' name='roll_custom1' value=' /r 3d6m + [[{@{custom1Trained}}+?{Focus/Other: -2 or 2|0}[Modifier] + @{Wound1} + @{Wound2} + @{Wound3} + @{Wound4} + @{Wound5} [Wounds]]] @{character_name} rolls a @{customskill1} test '></button>
     <br/>
   </div>
 </div>
@@ -333,19 +345,3 @@
 
 </div>
 </div>
-<!-- margin-left:10px -->
-
-<rolltemplate class="sheet-rolltemplate-test">
-<div class="sheet-template-container">
-<div class="sheet-template-header">{{rollname}}</div>
-{{#attack}}
-<div class="sheet-template-row">Attack: {{attack}} {{attackadvantage}} vs AC</div>
-{{/attack}}
-        {{#damage}}
-<div class="sheet-template-row">Damage: {{damage}} Crit: {{dmgcrit}}</div>
-<div class="sheet-template-row">Type: {{dmgtype}}</div>
-{{/damage}}
-       {{#atteffect}}
-<div class="sheet-template-row"> <span class="sheet-template-desc">Effect: </span>{{atteffect}} </div>
-{{/atteffect}}
-</rolltemplate>
