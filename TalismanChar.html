@@ -205,7 +205,7 @@
     
     <input style="width:140px;" type="text" name='attr_customskill1' >    <input type="text" name='attr_focuscustomskill1' >    <select name="attr_custom1" class="dtype">      <option value="0"> ~ </option>
       <option value="@{brawn}">Brawn</option>      <option value="@{agility}">Agility</option>      <option value="@{mettle}">Mettle</option>      <option value="@{insight}">Insight</option>      <option value="@{wits}">Wits</option>      <option value="@{resolve}">Resolve</option>    </select>
-    <input style="width:40px;" type='checkbox' name='attr_custom1Trained' value='@{custom}' class='sheet-trainedchk'>
+    <input style="width:40px;" type='checkbox' name='attr_custom1Trained' value='@{custom1}' class='sheet-trainedchk'>
     <button type='roll' name='roll_custom1' value=' /r 3d6m + [[{@{custom1Trained}}+?{Focus/Other: -2 or 2|0}[Modifier] + @{Wound1} + @{Wound2} + @{Wound3} + @{Wound4} + @{Wound5} [Wounds]]] @{character_name} rolls a @{customskill1} test '></button>
     <br/>
   </div>
